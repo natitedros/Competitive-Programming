@@ -19,7 +19,7 @@ public class countingSort {
             for(int j = 0; j < arr.length; j++){
                 if(i == arr[j]){
                     counter[i-minValue]++;
-                    break;
+                    continue;
                 }
             }
         } 
