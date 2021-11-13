@@ -13,12 +13,13 @@ public class countingSort {
                 minValue = arr[i];
             }
         }
-        counter = new int[maxValue - minValue];   //declaring the counter array
+        counter = new int[maxValue - minValue + 1];   //declaring the counter array
         
         for(int i = minValue; i <=  maxValue; i++){     //iterating through the arrays to record the frequencies of all the elements
             for(int j = 0; j < arr.length; j++){
                 if(i == arr[j]){
                     counter[i-minValue]++;
+                    break;
                 }
             }
         } 
