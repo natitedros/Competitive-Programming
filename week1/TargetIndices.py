@@ -12,8 +12,4 @@ class Solution:
         for i in range(len(sortedArr)):
             if sortedArr[i]==target:
                 arr.append(i)
-<<<<<<< HEAD
         return arr
-=======
-        return arr
->>>>>>> 0b66944f25ff706de81f5bb264ed5ec904798bcf
