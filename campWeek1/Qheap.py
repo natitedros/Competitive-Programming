@@ -7,7 +7,7 @@ n = eval(input())
 while n>0:
     temp = input().split(' ')
     if temp[0]=='1':
-        heapq.heappush(heap,int(temp[1]))    #since the space is counted as a character
+        heapq.heappush(heap,int(temp[1]))    
         if temp[1] in dicts:
             dicts[int(temp[1])] += 1
         else:
