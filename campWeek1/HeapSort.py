@@ -1,4 +1,4 @@
-arr = [4,3,9,7,2]
+arr = [4, 1, 3, 9, 7,8,2,5]
 
 def heapify(arr, n, i):
    upheap(arr,n,i)
@@ -22,7 +22,7 @@ def downheap(arr,n,i):
     if r < n and arr[r] < arr[small]:
         small = r
 
-    if (small  != i):
+    if (small != i):
         arr[small] , arr[i] = arr[i] ,arr[small]
         downheap(arr,n,small)
         
@@ -31,19 +31,19 @@ def downheap(arr,n,i):
 def buildHeap(arr,n):
 
     for i in range(n):
-        heapify(arr, n,i )
+        heapify(arr, n, n-i-1)
  
 def HeapSort(arr, n):
     res = []
-    buildHeap(arr,len(arr))
+    buildHeap(arr,n)
     while(arr):
         res.append(arr.pop(0))
         heapify(arr,len(arr),0)
-        print(res,arr)
+        
         
     print(res)
     
 
 HeapSort(arr, len(arr))
 
-print(arr)
+
