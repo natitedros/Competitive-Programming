@@ -23,19 +23,23 @@ priceList.sort()
 for i in range(days):
     left = 0
     right = shops-1
+    count =0
     while left <= right:
         mid = left + (right-left)//2
-        if priceList[mid] < budget[i]:
+        if priceList[mid] <= budget[i]:
             left = mid+1
+            count = mid +1
+
         elif priceList[mid] > budget[i]:
             right = mid-1
-        else:
-            left = right = mid
-            break
-    if left< days and priceList[left] <= budget[i]:
-        print(left+1)
-    else: 
-        print(left)
+        # else:
+        #     left = right = mid
+        #     break
+    print(count)
+    # if left< days and priceList[left] <= budget[i]:
+    #     print(left+1)
+    # else: 
+    #     print(left)
 
 
 
