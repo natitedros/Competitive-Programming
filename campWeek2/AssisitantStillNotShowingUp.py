@@ -18,5 +18,3 @@ for i in range(m):
     gap.append(inlt())
 gap.sort()
 dicts = {}
-for g in gap:
-    if 
