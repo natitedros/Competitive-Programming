@@ -13,9 +13,7 @@ class Solution:
                 outDegree[i] = len(graph[i])
                 for nodes in graph[i]:
                     incomming[nodes].add(i)
-        count = 0
         while queue:
-            count += 1
             node = queue.popleft()
             for commers in incomming[node]:
                 outDegree[commers] -= 1
