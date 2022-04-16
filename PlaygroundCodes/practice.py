@@ -1,7 +1,16 @@
-s = [3,2,5,4,6,4,2,3,6]
-dict = {2:3,1:7,3:6, 4:1}
-a = [[1,2],[3,4],[5,6]]
-t = [[0,0]]*len(s)
-for i in range(len(s)):
-    t[i][0] = s[i]
-print(a[1][1])
+import string
+import sys
+input = sys.stdin.readline
+
+def inp():
+    return(int(input()))
+def inlt():
+    return(list(map(int,input().split())))
+def insr():
+    s = input()
+    return(list(s[:len(s) - 1]))
+def invr():
+    return(map(int,input().split()))
+
+a = input().split()
+print(a)
