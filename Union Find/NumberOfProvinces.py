@@ -24,6 +24,5 @@ class Solution:
             for j in range(n):
                 if i != j and (i,j) not in joined and isConnected[i][j] == 1:
                     joined.add((j,i))
-                    print(i,j)
                     union(i, j)
         return len(province)
