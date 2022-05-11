@@ -25,8 +25,10 @@ for k in range(test):
         for j in range(m):
             d1[i+j] += grid[i][j]
             d2[i-j] += grid[i][j]
-    maxD1 = max(d1, key=d1.get)
-    maxD2 = max(d2, key=d2.get)
-    row = maxD1-maxD2
-    col = maxD1+maxD2
-    print(d1[maxD1]+d2[maxD2]-grid[row][col])
+    res = 0
+    for i in range(n):
+        for j in range(m):
+            temp = d1[i+j] + d2[i-j] - grid[i][j]
+            if temp > res:
+                res = temp
+    print(res)
