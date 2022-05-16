@@ -16,5 +16,3 @@ test = inp()
 for k in range(test):
     n, k = invr()
     power = 0
-    arr = 
-    while n
