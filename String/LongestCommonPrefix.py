@@ -12,3 +12,4 @@ class Solution:
                     lenRes = j
                     break
         return ''.join(res[:lenRes])
+        
