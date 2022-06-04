@@ -19,7 +19,6 @@ for char in name:
     if char not in letters:
         letters.add(char)
         count += 1
-print(letters)
 if count%2:
     print("IGNORE HIM!")
 else:
