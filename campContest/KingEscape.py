@@ -15,37 +15,23 @@ n = inp()
 ax,ay = invr()
 bx,by = invr()
 cx,cy = invr()
-chessDir = [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]
-queenRange = set()
-def queens(x,y,ind):
-    if 0<=x<n and 0<=y<n:
-        queenRange.add((x,y))
-        r,c = chessDir[ind]
-        x += r
-        y += c
-        return queens(x,y,ind)
+if bx<ax and by<ay:
+    if cx<ax and cy<ay:
+        print("YES")
     else:
-        return 0
-for i in range(8):
-    queens(ax,ay,i)
-dp = {}
-def kings(x,y):
-    if (x,y) in dp:
-        return dp[(x,y)]
-    if (x,y) in queenRange or x < 0 or y < 0 or x >= n or y >= n:
-        return False
-    elif (x,y) == (cx,cy):
-        return True
+        print("NO")
+elif bx<ax and by>ay:
+    if cx<ax and cy>ay:
+        print("YES")
     else:
-        dp[(x,y)] = False
-        for i in range(8):
-            r,c = chessDir[i]
-            new_r, new_c = x+r,y+c
-            dp[(x,y)] |= kings(new_r,new_c)
-            if dp[(x,y)]:
-                return dp[(x,y)]
-        return dp[(x,y)]
-if kings(bx,by):
-    print("YES")
+        print("NO")
+elif bx>ax and by<ay:
+    if cx>ax and cy<ay:
+        print("YES")
+    else:
+        print("NO")
 else:
-    print("NO")
+    if cx>ax and cy>ay:
+        print("YES")
+    else:
+        print("NO")
