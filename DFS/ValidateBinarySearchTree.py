@@ -18,3 +18,15 @@ class Solution:
             return [True,min(node.val,left[1]),max(node.val,right[2])]
         res = dfs(root)
         return res[0]
+
+# Improved
+
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def dfs(node,low,high):
+            if not node:
+                return True
+            if node.val <= low or node.val >= high:
+                return False
+            return dfs(node.left,low,node.val) and dfs(node.right,node.val,high)
+        return dfs(root,-1*inf,inf)
