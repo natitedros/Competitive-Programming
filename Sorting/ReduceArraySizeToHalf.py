@@ -20,3 +20,23 @@ class Solution:
             res += 1
             i += 1
         return res
+
+# Improved
+
+class Solution:
+    def minSetSize(self, arr: List[int]) -> int:
+        n = len(arr)
+        freq = defaultdict(int)
+        for i in arr:
+            freq[i] += 1
+        heap = []
+        sm = 0
+        for val in freq.values():
+            sm += val
+            if sm <= n/2:
+                heapq.heappush(heap,val)
+            else:
+                sm -= heapq.heappushpop(heap,val)
+        while sm >= n/2:
+            sm -= heapq.heappop(heap)
+        return len(heap)+1    
