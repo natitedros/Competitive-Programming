@@ -49,3 +49,32 @@ class Solution:
             right += 1
         res[1] = right-1
         return res
+
+    #  Improved More
+
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        n = len(nums)
+        
+        def best(l):
+            left, right = 0, n-1
+            while left <= right:
+                mid = left + (right-left)//2
+                if l:
+                    if nums[mid] < target:
+                        left = mid + 1
+                    else:
+                        right = mid - 1
+                else:
+                    if nums[mid] > target:
+                        right = mid - 1
+                    else:
+                        left = mid + 1
+            if l:
+                return left
+            return right
+        res = [best(True),best(False)]
+        if not 0<=res[0]<n or nums[res[0]] != target:
+            res[0] = res[1] = -1
+        return res
+        
