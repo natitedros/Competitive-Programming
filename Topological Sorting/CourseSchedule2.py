@@ -1,3 +1,4 @@
+# BFS Approach
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         incomming = [0]*numCourses
@@ -23,3 +24,28 @@ class Solution:
         if count == numCourses:
             return res
         return []
+
+# DFS Approach
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        outgoing = defaultdict(list)
+        for course,pre in prerequisites:
+            outgoing[pre].append(course)
+        stk = []
+        color = [0]*numCourses
+        def dfs(course):
+            if color[course] == 1:
+                return False
+            if color[course] == 2:
+                return True
+            color[course] = 1
+            for post in outgoing[course]:
+                if not dfs(post):
+                    return False
+            color[course] = 2
+            stk.append(course)
+            return True
+        for i in range(numCourses):
+            if not dfs(i):
+                return []
+        return stk[::-1]
