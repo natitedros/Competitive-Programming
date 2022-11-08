@@ -1,3 +1,4 @@
+# Backtracking
 class Solution:
     def readBinaryWatch(self, turnedOn: int) -> List[str]:
         time = [8,4,2,1,32,16,8,4,2,1]
@@ -17,4 +18,15 @@ class Solution:
                     backtrack(i,hr,mint+time[i],leds-1)
         backtrack(-1,0,0,turnedOn)
         return res
-        
+# Bit manipulation
+class Solution:
+    def readBinaryWatch(self, turnedOn: int) -> List[str]:
+        result = []
+        for h in range(12):
+            for m in range(60):
+                if bin(h).count("1") + bin(m).count("1") == turnedOn:
+                    minute = str(m)
+                    if int(minute) // 10 == 0:
+                        minute = "0" + minute
+                    result.append(str(h) + ":" + minute)
+        return result
