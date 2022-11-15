@@ -5,7 +5,9 @@ def solve(nums):
     lengths = []
     for num in nums:
         freq[num] += 1
-        if freq[num]%2 == 0:
+        if freq[num] == 4:
+            return 0
+        if freq[num] == 2:
             lengths.append(num)
     if len(lengths) < 2:
         return -1
