@@ -8,4 +8,5 @@ def solve(s):
         elif prev == (temp+1)%3:
             result += 1
         prev = temp
-    return result + (2-prev)
+    return result
+print(solve("bcaaa"))
