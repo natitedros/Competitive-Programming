@@ -1,2 +1,2 @@
 # Competitive-Programming
-### Ongoing practice codes of the challenges and questions I have solved from Leetcode, HackerRank, and CodeForces
+### Ongoing Data Structures and Algorithms repository I use to save my Leetcode and Codeforces solutions for questions.
