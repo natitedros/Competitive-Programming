@@ -1,6 +1,5 @@
 import sys
 input = sys.stdin.readline
-
 ############ ---- Input Functions ---- ############
 def inp():
     return(int(input()))
